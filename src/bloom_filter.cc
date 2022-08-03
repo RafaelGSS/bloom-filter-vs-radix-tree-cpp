@@ -64,12 +64,8 @@ bool BloomFilter::Lookup(std::string s) {
     return bitarray_[a] && bitarray_[b] && bitarray_[c] && bitarray_[d];
 }
 
-// insert operation
 void BloomFilter::Insert(std::string s) {
-    // check if the element in already present or not
-    if (Lookup(s))
-        std::cout << s << " is Probably already present" << std::endl;
-    else {
+    if (!Lookup(s)) {
         int a = h1(s, arrSize_);
         int b = h2(s, arrSize_);
         int c = h3(s, arrSize_);
@@ -79,7 +75,5 @@ void BloomFilter::Insert(std::string s) {
         bitarray_[b] = true;
         bitarray_[c] = true;
         bitarray_[d] = true;
-
-        std::cout << s << " inserted" << std::endl;
     }
 }

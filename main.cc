@@ -18,11 +18,11 @@ int main() {
       "hurt",     "nuke",          "gloomy",
       "facebook", "geeksforgeeks", "twitter" };
   for (int i = 0; i < 33; i++) {
-    bf.Insert(sarray[i]);
+    bf.Insert("/home/repos/" + sarray[i]);
   }
-  std::cout << bf.Lookup("Tennis") << std::endl;
-  std::cout << bf.Lookup("/facebook") << std::endl;
-  std::cout << bf.Lookup("facebook") << std::endl;
+  std::cout << bf.Lookup("/tmp/") << std::endl;
+  std::cout << bf.Lookup("/usr/") << std::endl;
+  std::cout << bf.Lookup("/home/repos/valid-path") << std::endl;
 
   return 0;
 }
