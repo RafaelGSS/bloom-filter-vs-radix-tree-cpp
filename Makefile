@@ -1,6 +1,9 @@
 CXX ?= g++
-LDFLAGS = -Wall
+LDFLAGS = -g
 LDLIBS =
+
+CFLAGS = -g
+CXXFLAGS= -g
 
 TARGET = $(notdir $(basename $<))
 SRC_DIRS ?= ./src
